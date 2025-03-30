@@ -1,1 +1,36 @@
+import yfinance as yf
+import pandas as pd
+from datetime import datetime
 
+def get_stock_data(ticker, start_date, end_date):
+    # ... (rest of the get_stock_data function)
+
+def main():
+    while True:
+        try:
+            ticker = input("Enter the stock ticker symbol: ").upper()
+            start_date = input("Enter the start date (YYYY-MM-DD): ")
+            datetime.strptime(start_date, '%Y-%m-%d') #Date validation
+            end_date = input("Enter the end date (YYYY-MM-DD): ")
+            datetime.strptime(end_date, '%Y-%m-%d') #Date validation
+            break #exit loop if dates are valid.
+        except ValueError:
+            print("Invalid date format. Please use YYYY-MM-DD.")
+        except Exception as e:
+            print(f"An error occured: {e}")
+            return
+
+    stock_data = get_stock_data(ticker, start_date, end_date)
+
+    if stock_data is not None:
+        if not stock_data.empty: #check if dataframe is empty.
+            print(stock_data)
+            stock_data.to_csv(f"{ticker}_stock_data.csv")
+            print(f"Stock data saved to {ticker}_stock_data.csv")
+            print("\nClosing Prices:")
+            print(stock_data['Close'])
+        else:
+            print("No data was returned for that date range.")
+
+if __name__ == "__main__":
+    main()
