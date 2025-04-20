@@ -34,3 +34,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+git fetch origin
+git checkout 1-python
