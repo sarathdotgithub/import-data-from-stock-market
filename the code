@@ -1,5 +1,10 @@
-git fetch origin
-git checkout 1-python
+# My Awesome Project
+
+[![Language: Python](https://img.shields.io/badge/Language-Python-blue)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green)](https://opensource.org/licenses/MIT)
+[![Build Status](https://travis-ci.com/your-username/your-repo.svg?branch=main)](https://travis-ci.com/your-username/your-repo)
+
+This is a description of my awesome project...
 import yfinance as yf
 import pandas as pd
 from datetime import datetime
@@ -36,5 +41,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-git fetch origin
-git checkout 1-python
+
